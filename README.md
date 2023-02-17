@@ -1,3 +1,3 @@
 # travel-app
 
-Hello my name is conor
+Hello my name is Conor
