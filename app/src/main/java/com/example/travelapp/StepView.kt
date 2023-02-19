@@ -22,8 +22,8 @@ class StepView : AppCompatActivity() {
 
         // want to find the itinerary activity and pull the information from that itinerary object
         // to fill in the fields. Tring to add to the TextView string
-        val name = findViewById<TextView>(R.id.name) as TextView
-        name.text = "Name : " + step.name
+        val name = findViewById<TextView>(R.id.textView_title_step_display) as TextView
+        name.text = step.name
 
         val address = findViewById<TextView>(R.id.address) as TextView
         address.text = "Address : " + step.address
