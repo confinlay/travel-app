@@ -1,5 +1,6 @@
 package com.example.travelapp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import com.example.travelapp.itineraries.StaticData
 import com.example.travelapp.itineraries.Step
 import java.io.Serializable
 import com.example.travelapp.MainActivity.Companion.itineraryList
+import com.google.gson.Gson
 
 class CreateItem : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +33,17 @@ class CreateItem : AppCompatActivity() {
             }
 
             itineraryList[itineraryIndex].steps.add(Step(name, address, cost, description))
+            saveData()
+
             finish()
         }
+    }
+
+    fun saveData() {
+        val sharedPreference =  getSharedPreferences(MainActivity.sharedPreferencesName, Context.MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+        val stringItineraryList: String = Gson().toJson(MainActivity.itineraryList)
+        editor.putString(MainActivity.saveDataKey, stringItineraryList)
+        editor.apply()
     }
 }
