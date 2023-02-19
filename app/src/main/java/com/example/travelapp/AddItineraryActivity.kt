@@ -1,10 +1,13 @@
 package com.example.travelapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import com.example.travelapp.itineraries.Itinerary
+import com.example.travelapp.itineraries.Step
 
 class AddItineraryActivity : AppCompatActivity() {
     lateinit var back_arrow: ImageView
@@ -28,7 +31,13 @@ class AddItineraryActivity : AppCompatActivity() {
         }
 
         addButton.setOnClickListener {
+            val newItinerary = Itinerary(editTextTitle.text.toString())
+            // statement to replace blank names, not needed but *aesthetics*
+            if (newItinerary.name == "") newItinerary. name = "Itinerary"
+            MainActivity.itineraryList.add(newItinerary)
 
+            // Return to previous page
+            finish()
         }
     }
 }

@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.testingapplication.ItineraryListAdapter
 import com.example.travelapp.itineraries.Itinerary
 //import com.example.travelapp.itineraries.StaticData
 import com.example.travelapp.itineraries.Step

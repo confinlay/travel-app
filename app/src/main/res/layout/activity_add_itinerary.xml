@@ -78,6 +78,7 @@
         android:text="Add itinerary"
         android:textSize="20sp"
         android:layout_gravity="center"
+        android:padding="10dp"
         />
 
 </LinearLayout>
