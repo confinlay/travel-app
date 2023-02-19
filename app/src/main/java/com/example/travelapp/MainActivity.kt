@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ListView
-import com.example.testingapplication.ItineraryListAdapter
+import com.example.travelapp.adapters.ItineraryListAdapter
 import com.example.travelapp.itineraries.StaticData
 import java.io.Serializable
 

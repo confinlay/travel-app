@@ -1,4 +1,4 @@
-package com.example.testingapplication
+package com.example.travelapp.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -20,7 +20,7 @@ class ItineraryListAdapter(private val context: Context, dataArray: List<Itinera
         val price = view.findViewById<TextView>(R.id.textView_itinerary_price)
 
         title.text = itinerary!!.name
-        price.text = itinerary.calculateItineraryPrice().toString() + " €"
+        price.text =  "${itinerary.calculateItineraryPrice()} €"
         return view
     }
 }
