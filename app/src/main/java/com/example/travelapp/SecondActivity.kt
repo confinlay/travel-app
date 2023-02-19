@@ -24,7 +24,7 @@ class SecondActivity : AppCompatActivity(){
     }
     */
 
-    lateinit var listViewStep: ListView
+    //lateinit var listViewStep: ListView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
