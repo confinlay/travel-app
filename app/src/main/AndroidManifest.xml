@@ -12,8 +12,11 @@
         android:theme="@style/Theme.TravelApp"
         tools:targetApi="31">
         <activity
+            android:name=".ItineraryActivity"
+            android:exported="false" />
+        <activity
             android:name=".CreateItem"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".SecondActivity"
             android:exported="false" />
