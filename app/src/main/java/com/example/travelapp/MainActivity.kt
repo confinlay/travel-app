@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var listViewItinerary: ListView
     lateinit var createButton: ImageView
+    lateinit var itineraryListAdapter: ItineraryListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +35,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupItineraryListView() {
-        val arrayAdapter: ItineraryListAdapter = ItineraryListAdapter(this, itineraryList)
+        itineraryListAdapter = ItineraryListAdapter(this, itineraryList)
         listViewItinerary.isClickable = true
-        listViewItinerary.adapter = arrayAdapter
+        listViewItinerary.adapter = itineraryListAdapter
 
         listViewItinerary.setOnItemClickListener { parent, view, position, id ->
             val intent = Intent(this, ItineraryActivity::class.java)
@@ -50,6 +51,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddItineraryActivity::class.java)
             startActivity(intent)
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        // update the data in the listView
+        itineraryListAdapter.notifyDataSetChanged()
     }
 
 }
