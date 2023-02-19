@@ -74,7 +74,7 @@
         android:layout_width="277dp"
         android:layout_height="50dp"
         android:layout_marginTop="96dp"
-        android:text="[Insert Itinery Title]"
+        android:hint="Insert Itinerary Title"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
