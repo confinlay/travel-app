@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
+    <Button
+        android:id="@+id/itdubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="676dp"
+        android:backgroundTint="#6100ED"
+        android:onClick="submitbuttonHandler"
+        android:text="SUBMIT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/p2toolbar"
         android:layout_width="match_parent"
@@ -36,10 +48,9 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="414dp"
-        android:layout_height="581dp"
+        android:layout_width="408dp"
+        android:layout_height="507dp"
         android:layout_marginTop="160dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,15 +62,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <View
+                android:id="@+id/ItBlock1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 
-    <TextView
+    <EditText
         android:id="@+id/Itin_Title"
         android:layout_width="277dp"
         android:layout_height="50dp"
         android:layout_marginTop="96dp"
-        android:text="[Store Itinery Title]"
+        android:text="[Insert Itinery Title]"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
