@@ -3,6 +3,7 @@ package com.example.travelapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ListView
@@ -13,18 +14,19 @@ import java.io.Serializable
 class MainActivity : AppCompatActivity() {
     val itineraryList = StaticData().itineraryList
     lateinit var listViewItinerary: ListView
+    lateinit var createButton: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-            val createButton = findViewById<ImageView>(R.id.createButton)
-            createButton.setOnClickListener{
-                val intent = Intent(this, SecondActivity::class.java)
-                startActivity(intent)
-            }
 
+        createButton = findViewById(R.id.createButton)
         listViewItinerary = findViewById(R.id.list_item)
 
-        //val arrayAdapter: ArrayAdapter<Itinerary> = ArrayAdapter(this, R.layout.itinerary_list_view, itineraries)
+        setupButtons()
+        setupItineraryListView()
+    }
+
+    fun setupItineraryListView() {
         val arrayAdapter: ItineraryListAdapter = ItineraryListAdapter(this, itineraryList)
         listViewItinerary.isClickable = true
         listViewItinerary.adapter = arrayAdapter
@@ -35,4 +37,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    fun setupButtons() {
+        createButton.setOnClickListener{
+            val intent = Intent(this, AddItineraryActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
 }
