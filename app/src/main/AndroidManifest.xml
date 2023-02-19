@@ -15,6 +15,9 @@
             android:name=".AddItineraryActivity"
             android:exported="false" />
         <activity
+            android:name=".StepView"
+            android:exported="false" />
+        <activity
             android:name=".ItineraryActivity"
             android:exported="false" />
         <activity
