@@ -10,7 +10,9 @@ import com.example.travelapp.itineraries.StaticData
 import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
-    val itineraryList = StaticData().itineraryList
+    companion object {
+        val itineraryList = StaticData().itineraryList
+    }
     lateinit var listViewItinerary: ListView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
